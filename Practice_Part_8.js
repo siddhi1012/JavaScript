@@ -31,8 +31,33 @@ let gpa = student.map(function(el){
 
 });
 
+
 // filter 
 let nums = [2,4,1,5,6,2,7,8,9];
 let even = nums.filter((nums) => { 
     return nums % 2 == 0;
+});
+
+//some
+let odd = nums.some((nums) => { 
+    return nums % 2 != 0;
+});
+
+//reduces
+let arr1 = [1,2,3,4,5,6];
+let finalVal = arr1.reduce((res,el) => 
+    {
+        console.log(res);
+        return res+el ;
+    }
+);
+
+// max
+let arr2 = [1,4,2,5,6,7,2,9,2];
+let max = arr2.reduce((max,el) =>{
+    if(el > max){
+        return el;
+    }else{
+        return max;
+    }
 });
