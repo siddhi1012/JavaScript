@@ -61,3 +61,24 @@ let max = arr2.reduce((max,el) =>{
         return max;
     }
 });
+console.log("Maximum");
+console.log(max);
+
+// multiple of 10 all number...
+let num = [10,20,30,40,50];
+let ans = num.every((el) => {
+return el%10 == 0;
+});
+console.log(ans);
+
+
+// min
+let min = arr2.reduce((min,el) =>{
+    if(el > min)
+        return min ;
+    else 
+        return el;
+
+});
+
+console.log(min);
