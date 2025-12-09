@@ -96,7 +96,8 @@ function sum(...args){
     return args.reduce((sum , el) => sum + el);
 }
 
-function min2(...args){
+function min2(msg, ...args){
+    console.log(msg);
     return args.reduce((min2 , el) => {
         if(min2 > el){
             return el;
