@@ -80,5 +80,12 @@ let min = arr2.reduce((min,el) =>{
         return el;
 
 });
-
 console.log(min);
+
+//default parameter
+console.log("default parameter");
+function sum(a,b=2){
+    return a + b;
+}
+let s = sum(2);
+console.log(s);
