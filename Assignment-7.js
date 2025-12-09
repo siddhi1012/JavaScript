@@ -19,3 +19,5 @@ const isEven = (num) => {
 }
 
 console.log(isEven(num));
+
+
