@@ -89,3 +89,19 @@ function sum(a,b=2){
 }
 let s = sum(2);
 console.log(s);
+
+
+// rest 
+function sum(...args){
+    return args.reduce((sum , el) => sum + el);
+}
+
+function min2(...args){
+    return args.reduce((min2 , el) => {
+        if(min2 > el){
+            return el;
+        }else{
+            return min2;
+        }
+    })
+}
