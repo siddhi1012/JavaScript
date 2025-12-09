@@ -25,4 +25,52 @@ function getUnique(str){
     return ans;
 
 }
-getUnique(str);
+let s = getUnique(str);
+console.log(s);
+
+// Question - 3 
+let country = ["Australia","Germany","United States of America"];
+function longestName(country){
+    let ansIdx = 0;
+    for(let i = 0; i<country.length; i++){
+        let ansLen = country[ansIdx].length;
+        let currLen = country[i].length;
+        if(currLen > ansLen){
+            ansIdx = i;
+        }
+
+    }
+    return country[ansIdx];
+}
+
+longestName(country);
+
+// Question - 4
+
+let string = "siddhi";
+function countVowels(string){
+    let count = 0; 
+    for(let i = 0; i<string.length; i++){
+        if(
+            string.charAt(i) == "a" ||
+            string.charAt(i) == "e" ||
+            string.charAt(i) == "i" ||
+            string.charAt(i) == "o" ||
+            string.charAt(i) == "u" 
+        ){
+            count ++ ; 
+        }
+    }
+    return count;
+}
+countVowels(string);
+
+// Question - 5
+let start = 100;
+let end = 200;
+function generateRandom(start,end){
+    let diff = end - start;
+    return Math.floor(Math.random()*diff)+start;
+}
+
+generateRandom(start,end);
