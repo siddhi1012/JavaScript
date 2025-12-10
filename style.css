@@ -4,6 +4,8 @@ body {
 
 .green{
   color: green;
+}
+.underline{
   text-decoration:underline black wavy;
 }
 
@@ -18,7 +20,7 @@ body {
   padding: 1rem;
 }
 
-.yellowbg{
+.yellowBg{
   background-color: brown;
 }
 
