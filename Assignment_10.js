@@ -19,3 +19,10 @@ box2.addEventListener("scroll", function (){
     console.log("Text was Scrolling");
 
 });
+
+let img = document.querySelector("#myImg");
+img.addEventListener("load", function (){
+    console.log("Image has finished loading!");
+    alert("Image is fully loaded and ready to display.");
+
+});
