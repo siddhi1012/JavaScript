@@ -26,3 +26,14 @@ img.addEventListener("load", function (){
     alert("Image is fully loaded and ready to display.");
 
 });
+
+let btn2 = document.createElement("button");
+btn2.innerText = "Click Me";
+let body = document.querySelector("body");
+body.append(btn2);
+btn2.addEventListener("click", function (){
+    console.log("Button Was Clicked");
+    btn2.style.backgroundColor = "green";
+
+
+});
