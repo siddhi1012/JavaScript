@@ -20,8 +20,6 @@ ul.addEventListener("click", function (){
         listItem.remove();
         console.log("Delete");
     }
-
-
 });
 
 //Child element
