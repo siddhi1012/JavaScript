@@ -19,3 +19,4 @@ function three(){
     let ans = two() + one();
     console.log(ans);
 }
+three();
