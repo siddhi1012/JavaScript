@@ -1,5 +1,5 @@
 let gameSeq = [];
-let userSeeq = [];
+let userSeq = [];
 let btns = ["yellow","red","purple","green"]; 
 
 let started = false;
@@ -16,7 +16,7 @@ document.addEventListener("keypress",function (){
 });
 
 // 2nd Step -> level Up -> button Flash -> Update Value 
-function gameFlashFlash(btn){
+function gameFlash(btn){
     btn.classList.add("flash")
     setTimeout(function(){
         btn.classList.remove("flash");
@@ -37,20 +37,29 @@ function levelUp(){
     let ranIdx = Math.floor(Math.random()*4);
     let randColor = btns[ranIdx];
     let randbtn = document.querySelector(`.${randColor}`);
-    console.log(ranIdx);
-    console.log(randColor);
-    console.log(randbtn);
+    gameSeq.push(randColor);
+    console.log(gameSeq);
     gameFlash(randbtn);
 }
 
+function checkAns(){
+    console.log("curr level :",level);
+
+}
+
 // Event Listener 
-function btnPress (){
+function btnPress () {
     console.log(this);
     let btn = this;
     userFlash(btn);
+
+    userColor = btn.getAttribute("id");
+    userSeq.push(userColor);
+    checkAns(); 
 }
 let allBtns = document.querySelectorAll(".btn");
 for(btn of allBtns){
     btn.addEventListener("click",btnPress);
 }
+
 
