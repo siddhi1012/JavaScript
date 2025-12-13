@@ -61,38 +61,52 @@ changeColor("red",1000, () =>{
 //     }
 // }
 
-// Through callback -> Promises
-function savetoDbPromises(data,success,failure){
-    let internetSpeed = Math.floor(Math.random()*10)+1;
-    if(internetSpeed > 4){
-        success();
-    }
-    else{
-        failure();
-    }
-}
+// Through callback -> 
+// function savetoDbPromises(data,success,failure){
+//     let internetSpeed = Math.floor(Math.random()*10)+1;
+//     if(internetSpeed > 4){
+//         success();
+//     }
+//     else{
+//         failure();
+//     }
+// }
 
-savetoDbPromises(
-    "apan college",
-    () =>{
-    console.log("Success:Your data was Saved");
-    savetoDbPromises(
-        "Siddhi Gavhane",
-    () =>{
-    console.log("Success 2 :Your data was Saved");
-    savetoDbPromises(
-        "Buudu Hase",
-    () =>{
-    console.log("Success 3 :Your data was Saved");   
-    },
-    () =>{
-     console.log("Failure 2: Weak Connection.Data was not saved")
+// savetoDbPromises(
+//     "apan college",
+//     () =>{
+//     console.log("Success:Your data was Saved");
+//     savetoDbPromises(
+//         "Siddhi Gavhane",
+//     () =>{
+//     console.log("Success 2 :Your data was Saved");
+//     savetoDbPromises(
+//         "Buudu Hase",
+//     () =>{
+//     console.log("Success 3 :Your data was Saved");   
+//     },
+//     () =>{
+//      console.log("Failure 2: Weak Connection.Data was not saved")
+//     });
+//     },
+//     () =>{
+//     console.log("Failure 2: Weak Connection.Data was not saved");
+//     });
+// },
+//     () =>{
+//     console.log("Failure: Weak Connection.Data was not saved");
+// });
+
+
+function savetoDb (data){
+    return new Promise((success,failure), ()=>{
+        let internetSpeed = Math.floor(Math.random()* 10) + 1;
+        if(internetSpeed > 4){
+            success();
+        }else{
+            failure();
+        }
+
     });
-    },
-    () =>{
-    console.log("Failure 2: Weak Connection.Data was not saved");
-    });
-},
-    () =>{
-    console.log("Failure: Weak Connection.Data was not saved");
-});
+
+}
