@@ -108,14 +108,16 @@ function savetoDb (data){
         }
     });
 }
-let request = savetoDb("Apna College");  // req = promise object
-console.log(request);
-request
+savetoDb("Apna College") // req = promise object
+
 .then(() =>{
-    console.log("Promise Resolved");
-    console.log(request);
+    console.log("Data:1 Saved");
+    return savetoDb("Hello World"); 
+})
+.then(() =>{
+    console.log("Data:2 Saved")
 })
 .catch(() =>{
     console.log("Promise Rejectd");
-    console.log(request);
+   
 });
