@@ -34,3 +34,18 @@ setTimeout(()=>{
 setTimeout(()=>{
     h2.style.color ="orange" ;
 },3000);
+
+let h1 = document.querySelector("h1");
+// Better Way
+function changeColor(color,delay,nextColorChange){
+    setTimeout(() =>{
+        h1.style.color = color;
+        if(nextColorChange) nextColorChange();
+    },delay);
+}
+
+changeColor("red",1000, () =>{
+    changeColor("green",1000,() =>{
+        changeColor("orange",1000);
+    });
+});
