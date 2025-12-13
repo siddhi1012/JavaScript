@@ -99,14 +99,21 @@ changeColor("red",1000, () =>{
 
 
 function savetoDb (data){
-    return new Promise((success,failure), ()=>{
+    return new Promise((success,failure)=>{
         let internetSpeed = Math.floor(Math.random()* 10) + 1;
         if(internetSpeed > 4){
-            success();
+            success("Success: Data Was Saved");
         }else{
-            failure();
+            failure("Failure: Weak Connection");
         }
-
     });
-
 }
+let request = savetoDb("Apna College");  // req = promise object
+console.log(request);
+request
+.then(() =>{
+    console.log("Promise Resolved");
+})
+.catch(() =>{
+    console.log("Promise Resolved");
+});
