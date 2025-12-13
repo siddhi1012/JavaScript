@@ -110,14 +110,22 @@ function savetoDb (data){
 }
 savetoDb("Apna College") // req = promise object
 
-.then(() =>{
+.then((result) =>{
     console.log("Data:1 Saved");
+    console.log(result);
     return savetoDb("Hello World"); 
 })
-.then(() =>{
-    console.log("Data:2 Saved")
+.then((result) =>{
+    console.log("Data:2 Saved");
+    console.log(result);
+    return savetoDb("Siddhi Gavhane");
 })
-.catch(() =>{
+.then((result) =>{
+    console.log("Data:3 Saved");
+    console.log(result);
+})
+.catch((error) =>{
     console.log("Promise Rejectd");
+    console.log(error);
    
 });
