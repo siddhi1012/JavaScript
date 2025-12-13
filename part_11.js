@@ -113,7 +113,9 @@ console.log(request);
 request
 .then(() =>{
     console.log("Promise Resolved");
+    console.log(request);
 })
 .catch(() =>{
-    console.log("Promise Resolved");
+    console.log("Promise Rejectd");
+    console.log(request);
 });
