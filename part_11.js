@@ -20,3 +20,17 @@ function three(){
     console.log(ans);
 }
 three();
+
+
+
+// Practice
+let h2 = document.querySelector("h2");
+setTimeout(()=>{
+    h2.style.color ="red" ;
+},1000);
+setTimeout(()=>{
+    h2.style.color ="green" ;
+},2000);
+setTimeout(()=>{
+    h2.style.color ="orange" ;
+},3000);
