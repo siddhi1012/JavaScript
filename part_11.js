@@ -1,25 +1,25 @@
 // Practice - 1
-function sayHello(){
-    console.log("Hello World");
-}
+// function sayHello(){
+//     console.log("Hello World");
+// }
 
-function Demo(){
-    sayHello();
-}
-Demo();
+// function Demo(){
+//     sayHello();
+// }
+// Demo();
 
 // Practice - 2
-function one(){
-    return 1;
-}
-function two(){
-    return one() + one();
-}
-function three(){
-    let ans = two() + one();
-    console.log(ans);
-}
-three();
+// function one(){
+//     return 1;
+// }
+// function two(){
+//     return one() + one();
+// }
+// function three(){
+//     let ans = two() + one();
+//     console.log(ans);
+// }
+// three();
 
 
 
@@ -47,7 +47,11 @@ function changeColor(color,delay,nextColorChange){
 // Callback hell -> Nesting of callback
 changeColor("red",1000, () =>{
     changeColor("green",1000,() =>{
-        changeColor("orange",1000);
+        changeColor("orange",1000, () =>{
+            changeColor("pink",1000,() =>{
+                changeColor("yellow",1000);
+            });
+        });
     });
 });
 
@@ -98,34 +102,34 @@ changeColor("red",1000, () =>{
 // });
 
 
-function savetoDb (data){
-    return new Promise((success,failure)=>{
-        let internetSpeed = Math.floor(Math.random()* 10) + 1;
-        if(internetSpeed > 4){
-            success("Success: Data Was Saved");
-        }else{
-            failure("Failure: Weak Connection");
-        }
-    });
-}
-savetoDb("Apna College") // req = promise object
+// function savetoDb (data){
+//     return new Promise((success,failure)=>{
+//         let internetSpeed = Math.floor(Math.random()* 10) + 1;
+//         if(internetSpeed > 4){
+//             success("Success: Data Was Saved");
+//         }else{
+//             failure("Failure: Weak Connection");
+//         }
+//     });
+// }
+// savetoDb("Apna College") // req = promise object
 
-.then((result) =>{
-    console.log("Data:1 Saved");
-    console.log(result);
-    return savetoDb("Hello World"); 
-})
-.then((result) =>{
-    console.log("Data:2 Saved");
-    console.log(result);
-    return savetoDb("Siddhi Gavhane");
-})
-.then((result) =>{
-    console.log("Data:3 Saved");
-    console.log(result);
-})
-.catch((error) =>{
-    console.log("Promise Rejectd");
-    console.log(error);
+// .then((result) =>{
+//     console.log("Data:1 Saved");
+//     console.log(result);
+//     return savetoDb("Hello World"); 
+// })
+// .then((result) =>{
+//     console.log("Data:2 Saved");
+//     console.log(result);
+//     return savetoDb("Siddhi Gavhane");
+// })
+// .then((result) =>{
+//     console.log("Data:3 Saved");
+//     console.log(result);
+// })
+// .catch((error) =>{
+//     console.log("Promise Rejectd");
+//     console.log(error);
    
-});
+// });
