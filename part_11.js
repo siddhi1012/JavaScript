@@ -36,7 +36,7 @@ setTimeout(()=>{
 },3000);
 
 let h1 = document.querySelector("h1");
-// Better Way
+// Better Way  -
 function changeColor(color,delay,nextColorChange){
     setTimeout(() =>{
         h1.style.color = color;
@@ -44,8 +44,39 @@ function changeColor(color,delay,nextColorChange){
     },delay);
 }
 
+// Callback hell -> Nesting of callback
 changeColor("red",1000, () =>{
     changeColor("green",1000,() =>{
         changeColor("orange",1000);
     });
+});
+
+// simple function 
+// function savetoDb(data){
+
+//     if(internetSpeed > 4){
+//         console.log("Your data was saved :",data);
+//     }else{
+//         console.log("Weak Connection.data not Saved");
+//     }
+// }
+
+// Through callback -> Promises
+function savetoDbPromises(data,success,failure){
+    let internetSpeed = Math.floor(Math.random()*10)+1;
+    if(internetSpeed > 4){
+        success();
+    }
+    else{
+        failure();
+    }
+}
+
+savetoDbPromises(
+    "apan college",
+    () =>{
+    console.log(" Success:Your data was Saved")
+},
+    () =>{
+    console.log("Failure: Weak Connection.Data was not saved");
 });
