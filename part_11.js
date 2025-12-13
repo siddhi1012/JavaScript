@@ -75,7 +75,23 @@ function savetoDbPromises(data,success,failure){
 savetoDbPromises(
     "apan college",
     () =>{
-    console.log(" Success:Your data was Saved")
+    console.log("Success:Your data was Saved");
+    savetoDbPromises(
+        "Siddhi Gavhane",
+    () =>{
+    console.log("Success 2 :Your data was Saved");
+    savetoDbPromises(
+        "Buudu Hase",
+    () =>{
+    console.log("Success 3 :Your data was Saved");   
+    },
+    () =>{
+     console.log("Failure 2: Weak Connection.Data was not saved")
+    });
+    },
+    () =>{
+    console.log("Failure 2: Weak Connection.Data was not saved");
+    });
 },
     () =>{
     console.log("Failure: Weak Connection.Data was not saved");
