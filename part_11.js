@@ -35,25 +35,25 @@ setTimeout(()=>{
     h2.style.color ="orange" ;
 },3000);
 
-let h1 = document.querySelector("h1");
-// Better Way  -
-function changeColor(color,delay,nextColorChange){
-    setTimeout(() =>{
-        h1.style.color = color;
-        if(nextColorChange) nextColorChange();
-    },delay);
-}
+// let h1 = document.querySelector("h1");
+// // Better Way  -
+// function changeColor(color,delay,nextColorChange){
+//     setTimeout(() =>{
+//         h1.style.color = color;
+//         if(nextColorChange) nextColorChange();
+//     },delay);
+// }
 
-// Callback hell -> Nesting of callback
-changeColor("red",1000, () =>{
-    changeColor("green",1000,() =>{
-        changeColor("orange",1000, () =>{
-            changeColor("pink",1000,() =>{
-                changeColor("yellow",1000);
-            });
-        });
-    });
-});
+// // Callback hell -> Nesting of callback
+// changeColor("red",1000, () =>{
+//     changeColor("green",1000,() =>{
+//         changeColor("orange",1000, () =>{
+//             changeColor("pink",1000,() =>{
+//                 changeColor("yellow",1000);
+//             });
+//         });
+//     });
+// });
 
 // simple function 
 // function savetoDb(data){
@@ -132,4 +132,48 @@ changeColor("red",1000, () =>{
 //     console.log("Promise Rejectd");
 //     console.log(error);
    
+// });
+
+
+// apply promises to callback hell
+let h1 = document.querySelector("h1");
+function changeColor(color,delay){
+    return new Promise((resolve,reject)=>{
+           setTimeout(() =>{
+           h1.style.color = color; 
+           resolve("Color Changed");
+        },delay);
+    });
+}
+changeColor("red",1000)
+.then(() =>{
+    console.log("red Color was completed");
+    return changeColor("orange",1000);
+})
+.then(() =>{
+    console.log("orange color was completed")
+    return changeColor("green",1000);
+})
+.then(() =>{
+    console.log("green color was completed")
+    return changeColor("pink",1000);
+})
+.then(() =>{
+    console.log("pink color was completed")
+    return changeColor("yellow",1000);
+})
+.then(() =>{
+    console.log("yellow color was completed")
+    
+})
+// through promises callback hell can be resolve
+
+// changeColor("red",1000, () =>{
+//     changeColor("green",1000,() =>{
+//         changeColor("orange",1000, () =>{
+//             changeColor("pink",1000,() =>{
+//                 changeColor("yellow",1000);
+//             });
+//         });
+//     });
 // });
