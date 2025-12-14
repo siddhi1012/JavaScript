@@ -1,3 +1,5 @@
+const { default: axios } = require("axios");
+
 // Async keyword
 async function greet () {
     throw "weak Connection";
@@ -96,18 +98,41 @@ let url = "https://catfact.ninja/fact";
 
 // Request using axios
 let btn = document.querySelector("button");
-btn.addEventListener("click", function (){
-    let fact = getFacts();
+btn.addEventListener("click", async() => {
+    let fact = await getFacts();
     console.log(fact);
-
+    let p = document.querySelector("#result");
+    p.innerText = fact;
 });
 async function getFacts(){
     try{
        let res = await axios.get(url);
        return res.data.fact;
     }catch(e){
-        console.log("Error",e);
+        console.log("Error -",e);
         return "No Fact found";
     }
 
 }
+
+
+// University Example
+
+// University Example
+
+
+let url2 = "http://universities.hipolabs.com/search?country=";
+let country = "nepal";
+
+async function getColleges() {
+    try {
+        let res = await axios.get(url2 + country);
+        console.log(res.data); // actual college list
+    } catch (err) {
+        console.log("Error -", err);
+    }
+}
+
+// call the function
+getColleges();
+
