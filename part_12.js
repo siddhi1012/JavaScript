@@ -54,3 +54,6 @@ async function Demo2(){
     console.log(a)
     console.log("New Number : ", a+3);
 }
+
+let url = "https://catfact.ninja/fact";
+fetch(url);
