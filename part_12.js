@@ -116,23 +116,4 @@ async function getFacts(){
 }
 
 
-// University Example
-
-// University Example
-
-
-let url2 = "http://universities.hipolabs.com/search?country=";
-let country = "nepal";
-
-async function getColleges() {
-    try {
-        let res = await axios.get(url2 + country);
-        console.log(res.data); // actual college list
-    } catch (err) {
-        console.log("Error -", err);
-    }
-}
-
-// call the function
-getColleges();
-
+ 
