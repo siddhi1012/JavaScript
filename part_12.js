@@ -95,13 +95,19 @@ let url = "https://catfact.ninja/fact";
 // }
 
 // Request using axios
+let btn = document.querySelector("button");
+btn.addEventListener("click", function (){
+    let fact = getFacts();
+    console.log(fact);
+
+});
 async function getFacts(){
     try{
-        let res = await axios.get(url);
-        console.log(res.data.fact);
-        
+       let res = await axios.get(url);
+       return res.data.fact;
     }catch(e){
         console.log("Error",e);
+        return "No Fact found";
     }
 
 }
